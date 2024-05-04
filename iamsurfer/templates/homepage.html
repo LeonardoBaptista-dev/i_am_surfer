@@ -1,0 +1,69 @@
+
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title> {% block titulo %}
+            I am Surfer
+            {% endblock titulo %}
+    </title>
+    
+</head>
+
+{% block body %}
+<body class="overflow-hidden">
+    <div class="container">
+    <header>
+        <nav>
+        <div class="logo-iamsurfer">
+            <img src="{{ url_for('static', filename='img/logo.png') }}"></img>
+
+        </div>
+
+        <div class="restante-nav">
+            <a href="" class="link-nav">Sobre nós</a>
+            <a href="" class="link-nav">Parcerias</a>
+            <a href="" class="link-nav">Contato</a>
+        </div>
+        </nav>
+    </header>
+
+    <img src="{{ url_for('static', filename='img/fundo.png') }}" class="bg-imagem-iamsurfer" />
+
+    <div class="container-popup">
+
+        {% block formulario %}
+
+        <form method="POST" class="popup">
+            {{ form.csrf_token }}
+            <img class="logo" src="{{ url_for('static', filename='img/logo.png') }}"></img>
+
+            
+
+            <div class="div-input">
+                {{ form.email.label(class="label") }}
+                    {{ form.email(class="input") }}
+            </div>
+
+            <div class="div-input">
+                {{ form.senha.label(class="label") }}
+                {{ form.senha(class="input") }}
+            </div>
+
+            <div class="div-botao">
+                {{ form.botao(class="botao-login") }}
+                <a href="{{ url_for('criarconta') }}" class="link-criarconta">Não tem uma conta? Crie aqui</a>
+            </div>
+
+        </form>
+        {% endblock %}
+
+    </div>
+    </div>
+</body>
+{% endblock %}
+</html>
