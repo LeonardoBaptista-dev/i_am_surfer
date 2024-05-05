@@ -23,7 +23,8 @@
             <img src="{{ url_for('static', filename='img/logo.png') }}"></img>
 
         </div>
-
+        <!-- Adiciona o botão de menu hamburguer para telas menores -->
+        <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
         <div class="restante-nav">
             <a href="" class="link-nav">Sobre nós</a>
             <a href="" class="link-nav">Parcerias</a>
@@ -64,6 +65,17 @@
 
     </div>
     </div>
+<script>
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "" || menu.style.display === "none") {
+    menu.style.display = "block";
+  } else {
+    menu.style.display = "none";
+  }
+}
+</script>
+        
 </body>
 {% endblock %}
 </html>

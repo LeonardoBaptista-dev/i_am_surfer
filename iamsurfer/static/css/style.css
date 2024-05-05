@@ -225,6 +225,10 @@ img {
   display: none;
 }
 
+#menu {
+  display: block;
+}
+
 #imagem-arquivo {
   display: none;
 }
@@ -240,4 +244,65 @@ img {
 .bloco-input-botao {
   display: flex;
   column-gap: 20px;
+}
+.menu-btn {
+  display: none; /* Oculta o botão por padrão */
+}
+/* Adicione regras CSS específicas para telas menores aqui */
+@media screen and (max-width: 600px){  /* Exemplo: alterar a largura da logo */
+  .logo-iamsurfer img {
+    width: 90px; /* Altere o tamanho conforme necessário */
+  }
+
+  /* Exemplo: alterar o tamanho da fonte do link de navegação */
+  .link-nav {
+    font-size: 14px; /* Altere o tamanho conforme necessário */
+  }
+
+  /* Exemplo: alterar a largura do container */
+  .container {
+    padding: 0 20px; /* Adicione margem aos lados para evitar que o conteúdo toque nas bordas */
+    display: flex;
+
+  }
+  
+  .container-popup {
+    width: 90%;
+    display: flex;
+
+  }
+  .popup {
+    /* display: none !important; */
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 35px;
+    border-radius: 32px;
+    background-color: #fff;
+  } 
+
+
+  /* CSS para empilhar as fotos verticalmente em telas menores */
+.conteudo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .bloco-imagem {
+      margin-bottom: 20px; /* Adicione espaço entre as fotos empilhadas */
+  }
+  .container-popup {
+    position: fixed; /* Manter o popup fixo no centro da tela */
+    top: 50%; /* Alinhar o topo do popup ao centro vertical */
+    left: 50%; /* Alinhar a esquerda do popup ao centro horizontal */
+    transform: translate(-50%, -50%); /* Centralizar o popup horizontal e verticalmente */
+    box-shadow: none; /* Remover a sombra de fundo */
+    background-image: none; /* Remover a imagem de fundo */
+}
+
+
 }
